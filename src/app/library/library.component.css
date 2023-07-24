@@ -1,0 +1,39 @@
+.selectedBox {
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.bookResult {
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.bookAuthors {
+  margin-left: 10px;
+}
+
+.searchBox {
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+.resultBox {
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+
+button {
+  width: 40px;
+}

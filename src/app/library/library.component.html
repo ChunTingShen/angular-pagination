@@ -1,0 +1,53 @@
+<div>
+  <label for="paginators">Items per page: </label>
+  <select [(ngModel)]="itemsPerPage" (change)="onSelection(itemsPerPage)">
+    <option *ngFor="let op of options" value="{{ op }}">{{ op }}</option>
+  </select>
+</div>
+<hr />
+
+<div *ngFor="let todo of todoArray">{{ todo.id }}. {{ todo.title }}</div>
+
+<hr />
+<div>
+  <span>Page {{ currentPage }} of {{ totalPages }} pages</span>
+</div>
+
+<div>
+  <span>{{ currentShowingItems[0] }}-{{ currentShowingItems[1] }}</span> of
+  <span> {{ totalItems }} </span> items
+</div>
+
+<hr />
+<div>
+  <button (click)="onFirstPage()"><<</button>
+  <button (click)="onPrevPage()"><</button>
+  <button (click)="onNextPage()">></button>
+  <button (click)="onLastPage()">>></button>
+</div>
+<hr />
+<div *ngIf="currentPage <= 3 || currentPage >= totalPages - 2">
+  <button (click)="onFirstPage()">1</button>
+  <button (click)="onCustomPage(2)">2</button>
+  <button (click)="onCustomPage(3)">3</button>
+  <button (click)="onClear()">...</button>
+  <button (click)="onCustomPage(totalPages - 2)">{{ totalPages - 2 }}</button>
+  <button (click)="onCustomPage(totalPages - 1)">{{ totalPages - 1 }}</button>
+  <button (click)="onLastPage()">{{ totalPages }}</button>
+</div>
+
+<div *ngIf="currentPage > 3 && currentPage < totalPages - 2">
+  <button (click)="onFirstPage()">1</button>
+  <button (click)="onClear()">...</button>
+  <button (click)="onCustomPage(currentPage - 1)">{{ currentPage - 1 }}</button>
+  <button (click)="onCustomPage(currentPage)">{{ currentPage }}</button>
+  <button (click)="onCustomPage(currentPage + 1)">{{ currentPage + 1 }}</button>
+  <button (click)="onClear()">...</button>
+  <button (click)="onLastPage()">{{ totalPages }}</button>
+</div>
+
+<div *ngIf="totalPages <= 7">
+  <span *ngFor="let page of totalPagesArray">
+    <button (click)="onCustomPage(page)">{{ page }}</button>
+  </span>
+</div>
