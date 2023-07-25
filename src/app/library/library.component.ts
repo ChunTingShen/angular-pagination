@@ -35,13 +35,12 @@ export class LibraryComponent implements OnInit {
         (x) => x + 1
       );
       const loop: number = Number(this.currentItem) + Number(this.itemsPerPage);
-      console.log('Loop: ', loop);
-
-      console.log('Total Pages: ', this.totalPages);
-      console.log('Item Per Page is: ', this.itemsPerPage);
+      // console.log('Loop: ', loop);
+      // console.log('Total Pages: ', this.totalPages);
+      // console.log('Item Per Page is: ', this.itemsPerPage);
       for (let i = this.currentItem; i < Math.min(loop, this.totalItems); i++) {
         if (val[i]) {
-          console.log(val[i]);
+          // console.log(val[i]);
           this.todoArray.push(val[i]);
         }
       }
